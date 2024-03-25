@@ -1,0 +1,250 @@
+    /* Adjust styles as needed */
+    body {
+        margin: 0;
+        font-family: 'Noto Kufi Arabic', serif;
+        background: #f8f9fa;
+    }
+     h3{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    h5{
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 7rem; /* Adjust sidebar width as needed */
+        height: 100%;
+        background-color: #1874D0; /* Adjust sidebar background color as needed */
+        padding-top: 5px;
+        transition: width 0.3s ease; /* Add transition effect for smooth width change */
+    }
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto{
+        position: unset;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 20px; /* Adjust space between items as needed */
+        text-align: center; /* Center the content */
+        position: relative; /* Required for submenu positioning */
+    }
+
+    .sidebar ul li a {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.8); /* Adjust link color as needed */
+        text-decoration: none;
+        padding: 15px; /* Adjust link padding as needed */
+        font-size: 15px; /* Adjust link font size as needed */
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .sidebar ul li:first-child a:hover {
+        background-color: transparent; /* No hover effect for the first child (Home) */
+    }
+
+    .sidebar ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Adjust hover background color as needed */
+        border-right: 5px solid rgba(255, 255, 255, 0.8); /* Adjust hover border color and width as needed */
+        padding-right: 15px; /* Adjust hover padding as needed */
+    }
+
+    .sidebar ul li .pi {
+        margin-bottom: 10px; /* Adjust space between icon and text */
+        font-size: 15px; /* Adjust icon size as needed */
+    }
+
+    .sidebar ul li a::after {
+        content: '';
+        position: absolute;
+        width: calc(100% - 40px); /* Adjust line width as needed */
+        height: 1px; /* Adjust line height as needed */
+        bottom: 0;
+        left: 20px;
+    }
+
+    .sidebar ul li .pi-home {
+        font-size: 30px; /* Adjust font size for home icon */
+    }
+
+    /* Main content */
+    .content {
+        margin-right: 7rem; /* Match sidebar width */
+        padding: 20px;
+    }
+
+    /* Submenu styles */
+    .submenu {
+        visibility: hidden; /* Initially hide the submenu */
+
+        position: absolute;
+        top: 0;
+        right: 100%;
+        background-color: #135ba1;
+        padding: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        z-index: 1;
+        width: 270px;
+        border-right: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, max-height 0.3s ease; /* Transition opacity and max-height */
+    }
+    
+    .submenu.active {
+        visibility: visible; /* Make the submenu visible */
+        max-height: 290px; /* Expand the submenu */
+    }
+    
+    .submenu a {
+        padding: 8px 16px; /* Adjust submenu link padding as needed */
+    }
+    
+
+.toggle-button {
+            display: none; /* Initially hide the button */
+        }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0; /* Hide sidebar by default on smaller screens */
+    }
+
+    .sidebar.active {
+        width: 7rem; /* Show sidebar when active class is added */
+    }
+
+    .sidebar ul li a {
+        padding: 15px 20px; /* Adjust link padding for smaller screens */
+    }
+
+    .content {
+        margin-right: 0; /* Remove right margin for main content */
+    }
+
+    .toggle-button {
+                display: block; /* Show the button */
+                background-color: #007bff; /* Blue background color */
+                color: #fff; /* White text color */
+                padding: 10px 20px; /* Add padding */
+                border: none; /* Remove border */
+                border-radius: 5px; /* Add rounded corners */
+                cursor: pointer; /* Change cursor to pointer */
+                margin: 10px auto; /* Center the button horizontally */
+            }
+            
+            .toggle-button:hover {
+                background-color: #0056b3; /* Darker blue on hover */
+            }
+}
+
+
+    .sidebar ul li .submenu a {
+        text-decoration: none;
+        text-align: right;
+        border: none;
+        display: block;
+        padding: 3px; /* Adjust submenu link padding as needed */
+        transition: background-color 0.3s ease;
+    }
+
+    .submenu a:hover {
+        background-color: #0d4377; /* Adjust submenu hover background color */
+    }
+
+    .header {
+        background-color: #fff; /* Adjust as needed */
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+        border-radius: 5px;
+    }
+
+    .header h3 {
+        margin: 0;
+        padding:20px; 
+    }
+
+    /* Styles for the buttons */
+    .header-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    .logout-button, .edit-button {
+        background-color: #D32F2F; /* Red color for logout button */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 6px;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px; /* Add some space between buttons */
+        border: 1px solid #a1a1a1;
+    }
+
+    .edit-button {
+        background-color: #0288D1; /* Green color for edit button */
+    }
+
+    .logout-button i, .edit-button i {
+        margin-right: 5px; /* Add space between icon and text */
+    }
+    .logout-button:hover::after,
+  .edit-button:hover::after {
+    content: attr('dddd');
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+          .student-details {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+            border-radius: 5px;
+            font-size: 0.93rem !important;
+
+        }
+
+        .student-info {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+        html{
+            font-size: 14px;
+        }
+
+        .st_name{
+            margin: 10px;
+        }
