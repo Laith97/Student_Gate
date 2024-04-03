@@ -14,6 +14,17 @@ class Student extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+    
+    public function info()
+    {
+        return $this->hasOne(Info::class, 'student_id');
+    }
+    
+    
     protected $fillable = [
         'full_name',
         'college',
@@ -37,6 +48,14 @@ class Student extends Model
         'phone_number_known2',
         'place_address',
         'place_give',
+        'semester_hours',
+        'semester_average',
+        'cumulative_hours',
+        'cumulative_average',
+        'sm_success',
+        'indicator',
     ];
+    
+    
     
 }

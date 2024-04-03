@@ -70,7 +70,7 @@
                 <input type="text" class="form-control" id="full_name" name="full_name" value="{{ $student->full_name }}" required>
             </div>
             <div class="form-group">
-                <label for="password">الرمز السري</label>
+                <label for="password"> الكلية/التخصص</label>
                 <input type="text" class="form-control" id="college" name="college" value="{{ $student->college }}" required>
             </div>
             <div class="form-group">
@@ -177,6 +177,32 @@
                     <option value="Doctor" {{ $student->level_educational_mom === 'Doctor' ? 'selected' : '' }}>دكتوراه</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="semester_hours">الساعات الفصلية</label>
+                <input type="text" class="form-control" id="semester_hours" name="semester_hours" value="{{ $student->semester_hours }}">
+            </div>
+            <div class="form-group">
+                <label for="semester_average">المعدل الفصلي</label>
+                <input type="text" class="form-control" id="semester_average" name="semester_average" value="{{ $student->semester_average }}">
+            </div>
+            <div class="form-group">
+                <label for="cumulative_hours">الساعات التراكمية</label>
+                <input type="text" class="form-control" id="cumulative_hours" name="cumulative_hours" value="{{ $student->cumulative_hours }}">
+            </div>
+            <div class="form-group">
+                <label for="cumulative_average">المعدل التراكمي</label>
+                <input type="text" class="form-control" id="cumulative_average" name="cumulative_average" value="{{ $student->cumulative_average }}">
+            </div>
+            <div class="form-group">
+                <label for="sm_success">س.م. بنجاح</label>
+                <input type="text" class="form-control" id="sm_success" name="sm_success" value="{{ $student->sm_success }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="indicator">مؤشر الفصل</label>
+                <input type="text" class="form-control" id="indicator" name="indicator" value="{{ $student->indicator }}">
+            </div>
+            
         <!--    <div class="form-group">
                 <label for="full_address">Full Address</label>
                 <input type="text" class="form-control" id="full_address" name="full_address" value="{{ $student->full_address }}">

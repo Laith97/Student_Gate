@@ -138,6 +138,30 @@
             <label for="level_educational_mom">المستوى الدراسي للأم</label>
             <p>{{ $student->level_educational_mom }}</p>
         </div>
+        <div class="details">
+            <label for="semester_hours">عدد ساعات الفصل الدراسي</label>
+            <p>{{ $student->semester_hours }}</p>
+        </div>
+        <div class="details">
+            <label for="semester_average">متوسط الفصل الدراسي</label>
+            <p>{{ $student->semester_average }}</p>
+        </div>
+        <div class="details">
+            <label for="cumulative_hours">عدد الساعات التراكمي</label>
+            <p>{{ $student->cumulative_hours }}</p>
+        </div>
+        <div class="details">
+            <label for="cumulative_average">المتوسط التراكمي</label>
+            <p>{{ $student->cumulative_average }}</p>
+        </div>
+        <div class="details">
+            <label for="sm_success">نجاح مساري</label>
+            <p>{{ $student->sm_success }}</p>
+        </div>
+        <div class="details">
+            <label for="indicator">المؤشر</label>
+            <p>{{ $student->indicator }}</p>
+        </div>
     </div>
 </body>
 </html>

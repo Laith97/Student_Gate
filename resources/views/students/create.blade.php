@@ -180,6 +180,33 @@
                     <option value="Doctor">دكتوراه</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label for="semester_hours">الساعات الفصلية</label>
+                <input type="text" class="form-control" id="semester_hours" name="semester_hours">
+            </div>
+            <div class="form-group">
+                <label for="semester_average">المعدل الفصلي</label>
+                <input type="text" class="form-control" id="semester_average" name="semester_average">
+            </div>
+            <div class="form-group">
+                <label for="cumulative_hours">الساعات التراكمية</label>
+                <input type="text" class="form-control" id="cumulative_hours" name="cumulative_hours">
+            </div>
+            <div class="form-group">
+                <label for="cumulative_average">المعدل التراكمي</label>
+                <input type="text" class="form-control" id="cumulative_average" name="cumulative_average">
+            </div>
+            <div class="form-group">
+                <label for="sm_success">س.م. بنجاح</label>
+                <input type="text" class="form-control" id="sm_success" name="sm_success">
+            </div>
+            
+            <div class="form-group">
+                <label for="indicator">مؤشر الفصل</label>
+                <input type="text" class="form-control" id="indicator" name="indicator">
+            </div>
+            
            <!-- <div class="form-group">
                 <label for="full_address">Full Address</label>
                 <input type="text" class="form-control" id="full_address" name="full_address">

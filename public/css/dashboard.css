@@ -237,6 +237,34 @@
 
         }
 
+        table {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+            border-radius: 5px;
+            font-size: 0.93rem !important;
+
+        }
+
+        #table{
+                padding: 20px;
+                background: #fff;
+                box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+                border-radius: 5px;
+                font-size: 0.93rem !important;
+                margin-bottom: 20px;
+            
+        }
+
+        .row #filter{
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+            border-radius: 5px;
+        }
         .student-info {
             text-align: right;
             margin-bottom: 1rem;
@@ -247,4 +275,8 @@
 
         .st_name{
             margin: 10px;
+        }
+
+        .form-control{
+            padding: 0.2rem 0.75rem !important;
         }

@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <title>Student Records</title>
     <style>
         body {
@@ -86,7 +86,7 @@
         .actions a:hover, .actions button:hover {
             opacity: 0.8;
         }
-        .create-user {
+        .create-course {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
@@ -96,7 +96,7 @@
     transition: background-color 0.3s ease;
 }
 
-.create-user:hover {
+.create-course:hover {
     background-color: #0056b3;
 }
 
@@ -106,49 +106,64 @@ h2{
     text-align: center;
 }
 
+.button-container {
+        display: flex;
+        align-items: center; /* Align items vertically */
+    }
+
+    .spacer {
+        flex-grow: 1; /* Push the "Manage Students" button to the end */
+    }
     </style>
 </head>
 <x-app-layout>
     <body>
         <div class="container">
-            <h2>Students Records</h2>
-            <div>
-                <a href="{{ route('students.create') }}" class="btn btn-primary create-user">Create User</a>
+            <h2>Courses</h2>
+            <div class="button-container">
+                <a href="{{ route('courses.create', ['student' => $student->id]) }}" class="btn btn-primary create-course">Add Course</a>
+                <div class="spacer"></div> <!-- Add spacer for flexbox -->
+                <a href="{{ route('students.index') }}" class="btn btn-secondary">Students Records</a>
             </div>
             <br>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>College</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($students as $student)
-                    <tr>
-                        <td>{{ $student->full_name }}</td>
-                        <td>{{ $student->college }}</td>
-                        <td>{{ $student->email }}</td>
-                        <td class="actions">
-                            <a href="{{ route('students.show', $student->id) }}" class="view">View</a>
-                            <a href="{{ route('students.edit', $student->id) }}" class="edit">Edit</a>
-                            <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="delete">Delete</button>
-                            </form>
-                            <a href="{{ route('courses.index', ['student' => $student->id]) }}" class="btn btn-info manage-courses">Manage Courses</a>
+            @if (isset($courses) && $courses->isEmpty())
+                <p>No courses found for this student.</p>
+            @elseif(isset($courses))
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Number</th>
+                            <th>Course Name</th>
+                            <th>Section</th>
+                            <th>Actions</th>
+                            <!-- Add more columns as needed -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($courses as $course)
+                        <tr>
+                            <td>{{ $course->course_number }}</td>
+                            <td>{{ $course->course_name }}</td>
+                            <td>{{ $course->section }}</td>
 
-
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                            <td class="actions">
+                                <a href="{{ route('courses.edit', ['student' => $student->id, 'course' => $course->id]) }}" class="edit">Edit</a>
+                                <form action="{{ route('courses.destroy', ['student' => $student->id, 'course' => $course->id]) }}" method="POST" style="display:inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="delete">Delete</button>
+                                </form>
+                            </td>
+                            <!-- Add more cells for additional columns -->
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+                <p>No courses found for this student.</p>
+            @endif
         </div>
     </body>
-    </x-app-layout>
+</x-app-layout>
 
 </html>

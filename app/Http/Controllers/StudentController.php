@@ -23,11 +23,12 @@ class StudentController extends Controller
             return redirect()->route('login')->with('error', 'You need to log in first.');
         }
 
-        return view('students.create');    }
+        return view('students.create');    
+    }
 
         
-        public function store(Request $request)
-{
+    public function store(Request $request)
+    {
     // Validate the incoming request data
     $request->validate([
         'full_name' => 'required|string|max:255',

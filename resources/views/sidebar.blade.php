@@ -46,8 +46,8 @@
             <!-- Submenu for Specifications -->
             <div id="specifications-submenu" class="submenu">
                 <a href="#">طباعة الجدول والقسيمة <i class="pi pi-fw pi-print layout-menuitem-icon"></i> </a>
-                <a href="#">نتائج منتسف الفصل <i class="pi pi-fw pi-percentage layout-menuitem-icon"></i> </a>
-                <a href="#"> نتائج الطالب النهائية <i class="pi pi-fw pi-chart-bar layout-menuitem-icon"></i></a>
+                <a href="{{ route('mid.show') }}">نتائج منتصف الفصل <i class="pi pi-fw pi-percentage layout-menuitem-icon"></i> </a>
+                <a href="{{ route('final.show') }}"> نتائج الطالب النهائية <i class="pi pi-fw pi-chart-bar layout-menuitem-icon"></i></a>
                 <a href="#"> الجدول الدراسي <i class="pi pi-fw pi-table layout-menuitem-icon"></i></a>
                 <a href="#">اﻹستفسار عن المواد المطروحة <i class="pi pi-fw pi-search layout-menuitem-icon"></i> </a>
                 <a href="#">الخطة الدراسية <i class="pi pi-fw pi-list layout-menuitem-icon"></i> </a>
